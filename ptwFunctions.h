@@ -53,6 +53,7 @@ public:
 	// Sensor values
 	int lightLevelMed = 255; 	// will make it fire on startup
 	float lightThreshold = 0.7;
+	float lightThreshold1 = 0.8;
 
 	// tty startup and read values
 	char reqChar = 'a';

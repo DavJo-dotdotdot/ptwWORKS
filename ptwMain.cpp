@@ -97,6 +97,6 @@ int main() {
         
         // clear screen
         cout << "\033[2J";
-        delay(100);
+        delay(10);
     }
 }

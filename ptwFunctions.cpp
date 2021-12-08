@@ -57,11 +57,11 @@ void ptwClass::sensorReadLeft(int extArr) {
     }
     // test run on the matrix
     // parse as it stands in memory: 
-    cout << "in matrix form: " << endl;
+    // cout << "in matrix form: " << endl;
 
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
-            cout << i2dArr[i][j] << "\t";
+            // cout << i2dArr[i][j] << "\t";
             
             if (i2dArr[i][j] < lightLevelMed * lightThreshold) {
                 pinFire = comparePos(left, i2dArr[i][j], baseLvlMtxL[i][j]);
@@ -114,7 +114,7 @@ void ptwClass::sensorReadRight(int extArr) {
 
     char* str = cArr1;
     char* pch;
-    //printf ("String splits at \"%s\"\n into tokens\n", str);
+    // printf ("String splits at \"%s\"\n into tokens\n", str);
     pch = strtok(str, " ,\t");
     j = 0; 		// arrays start at 0
     while (pch != NULL) {
@@ -130,11 +130,11 @@ void ptwClass::sensorReadRight(int extArr) {
     }
     // test run on the matrix
     // parse as it stands in memory: 
-    cout << "in matrix form: " << endl;
+    // cout << "in matrix form: " << endl;
 
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
-            cout << i2dArr1[i][j] << "\t";
+            // cout << i2dArr1[i][j] << "\t";
 
             if (i2dArr1[i][j] < lightLevelMed * lightThreshold) {
                 pinFire = comparePos(right, i2dArr1[i][j], baseLvlMtxR[i][j]);
@@ -166,7 +166,7 @@ void ptwClass::fireFlipper(char side) {
         cout << "\nfireFlipper LEFT mid stage\n";
         
         digitalWrite(3, LOW);
-        delay(300);
+        delay(100);
         
         cout << "\nfireFlipper LEFT end\n";
     }
@@ -178,7 +178,7 @@ void ptwClass::fireFlipper(char side) {
         cout << "\nfireFlipper RIGHT mid stage\n";
         
         digitalWrite(2, LOW);
-        delay(300);
+        delay(100);
         
         cout << "\nfireFlipper RIGHT end\n";
     }
@@ -188,7 +188,7 @@ void ptwClass::fireFlipper(char side) {
         delay(200);
         digitalWrite(2, LOW);
         digitalWrite(3, LOW);
-        delay(300);
+        delay(100);
     }
 }
 
@@ -204,7 +204,7 @@ bool ptwClass::comparePos(char side, int val, int comp) {
     if (side == left && notSensor(side) == true && val < comp * lightThreshold) {
         return true;
     }
-    else if (side == right && notSensor(side) == true && val < comp * lightThreshold) {
+    else if (side == right && notSensor(side) == true && val < comp * lightThreshold1) {
         return true;
     }
     else {
